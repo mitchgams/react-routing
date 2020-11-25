@@ -1,19 +1,19 @@
 import FilmBody from './FilmBody';
 import PersonBody from './PersonBody';
 
-const Card = (props) => {
+const Card = ({ data, title, endpoint }) => {
     let chooseBody  = () => {
-        if(props.endpoint === 'film') {
-            return <FilmBody film={props.data} />;
+        if(endpoint === 'film') {
+            return <FilmBody film={data} />;
         } else {
-            return <PersonBody person={props.data} />;
+            return <PersonBody person={data} />;
         }
     }
 
     return(
-        <div className="card mb-2" key={props.data.id}>
+        <div className="card mb-2" key={data.id}>
             <div className="card-header">
-            <h5>{props.title}</h5>
+            <h5>{title}</h5>
             </div>
             <div className="card-body">
                 {chooseBody()}

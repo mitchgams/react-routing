@@ -5,7 +5,7 @@ class Films extends Component {
     constructor() {
         super();
         this.state = {
-            data: null
+            data: []
         }
     }
 
@@ -24,9 +24,7 @@ class Films extends Component {
     }
 
     render() {
-        if(this.state.data === null) {
-            return <h1>Loading...</h1>;
-        } else return this.proccessData();
+        return this.proccessData();
     }
 }
 
